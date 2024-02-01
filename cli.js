@@ -31,6 +31,7 @@ const cli = meow(`
 	  --stdin           Validate/fix code from stdin
 	  --stdin-filename  Specify a filename for the --stdin option
 	  --print-config    Print the effective ESLint config for the given file
+	  --cache-strategy  Cache strategy for use with ES Lint (Default: 'metadata')
 
 	Examples
 	  $ xo
@@ -110,6 +111,10 @@ const cli = meow(`
 		},
 		stdinFilename: {
 			type: 'string',
+		},
+		cacheStrategy: {
+			type: 'string',
+			default: 'metadata',
 		},
 	},
 });
